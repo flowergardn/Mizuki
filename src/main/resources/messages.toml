@@ -1,6 +1,6 @@
 # Here is the message configuration file for Mizuki.
 # This is a really basic example of how you can configure messages.
-# For a more in depth dive, go to https://mizuki.astrid.sh/configure/messages
+# For a more in depth dive, go to https://mizuki.astrid.sh/configuration/messages
 
 [join]
 content = "%name% joined the server"
