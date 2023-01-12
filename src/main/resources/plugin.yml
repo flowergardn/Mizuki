@@ -1,0 +1,7 @@
+name: Mizuki
+version: '${project.version}'
+main: sh.astrid.mizuki.Mizuki
+api-version: 1.19
+commands:
+  reload:
+    description: "Reload the configuration"

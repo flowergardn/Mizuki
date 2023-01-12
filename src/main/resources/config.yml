@@ -1,0 +1,26 @@
+############################################################
+# +------------------------------------------------------+ #
+# |                 Configure Mizuki                     | #
+# +------------------------------------------------------+ #
+############################################################
+
+token: ""
+
+# Behaviour configuration
+# Need to customize messages? https://mizuki.astrid.sh/configuration/messages
+enableRoleMentions: false
+enableUserMentions: true
+
+# The max character limit of Discord messages that can be sent in-game
+# If this value is too low or too high, tinker with it.
+discordMessageLength: 128
+# Allows new lines in Discord messages
+# Disabled by default to keep things more uniform
+discordNewLines: false
+
+# Values under this are used internally and should not be touched, unless you know what you're doing.
+channelID: ""
+webhookID: ""
+guildID: ""
+
+
