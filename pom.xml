@@ -6,7 +6,7 @@
 
     <groupId>sh.astrid</groupId>
     <artifactId>Mizuki</artifactId>
-    <version>1.0-BETA</version>
+    <version>1.0.1-BETA</version>
     <packaging>jar</packaging>
 
     <name>Mizuki</name>

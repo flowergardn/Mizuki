@@ -14,7 +14,7 @@ import java.time.Duration
 
 class CommandListener {
     init {
-        Discord.api!!.addMessageCreateListener { event -> onCommand(event)}
+        Discord.api.addMessageCreateListener { event -> onCommand(event)}
     }
 
     private fun deleteMsgs(eventMsg: Message, sentMsg: Message, duration: Long = 5) {
@@ -48,13 +48,13 @@ class CommandListener {
 
         config.set("channelID", channelId)
 
-        chatChannel = Discord.api!!.getTextChannelById(channelId).get()
+        chatChannel = Discord.api.getTextChannelById(channelId).get()
 
         // Creates the webhook
         if(config.getString("webhookID").isNullOrEmpty()) {
             val webhook: Webhook = WebhookBuilder(chatChannel as ServerTextChannel?)
-                .setName(Discord.api!!.yourself.name)
-                .setAvatar(Discord.api!!.yourself.avatar)
+                .setName(Discord.api.yourself.name)
+                .setAvatar(Discord.api.yourself.avatar)
                 .create().join()
 
             config.set("webhookID", webhook.id)

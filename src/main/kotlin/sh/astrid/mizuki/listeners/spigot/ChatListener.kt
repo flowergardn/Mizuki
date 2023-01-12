@@ -1,6 +1,7 @@
 package sh.astrid.mizuki.listeners.spigot
 
 import org.bukkit.event.EventHandler
+import org.bukkit.event.EventPriority
 import org.bukkit.event.Listener
 import org.bukkit.event.player.AsyncPlayerChatEvent
 import sh.astrid.mizuki.Mizuki
@@ -11,9 +12,9 @@ class ChatListener : Listener {
         Mizuki.instance.server.pluginManager.registerEvents(this, Mizuki.instance)
     }
 
-    @EventHandler
+    @EventHandler(priority = EventPriority.LOW)
     fun onChat(event: AsyncPlayerChatEvent) {
-        // embeds take priority over text content
+        if(event.isCancelled) return
         sendWebhook(buildMsg(event, "chat"))
     }
 }

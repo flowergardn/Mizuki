@@ -8,7 +8,7 @@ import sh.astrid.mizuki.listeners.discord.ChatListener
 import sh.astrid.mizuki.listeners.discord.CommandListener
 
 object Discord {
-    var api: DiscordApi? = null
+    lateinit var api: DiscordApi;
     var chatChannel: TextChannel? = null
     var isConnected: Boolean = false
 
@@ -26,17 +26,12 @@ object Discord {
             .login()
             .join()
 
-        if(api == null) {
-            println("API was null, cancelling load.")
-            return
-        }
-
         isConnected = true
 
         if(channel.isNullOrEmpty()) {
             println("[Mizuki] Mizuki is not currently setup! Read https://mizuki.astrid.sh/setup for more information.")
         } else {
-            chatChannel = api!!.getTextChannelById(channel).get()
+            chatChannel = api.getTextChannelById(channel).get()
         }
 
         // Register listeners

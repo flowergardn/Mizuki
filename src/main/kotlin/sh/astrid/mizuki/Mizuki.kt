@@ -30,8 +30,7 @@ class Mizuki : JavaPlugin() {
         val version = instance.description.version;
         instance.logger.log(Level.INFO, "Mizuki v$version has loaded successfully.")
 
-        // todo: send messages with webhooks
-        // add config option for "rich webhooks"
+        // todo: add config option for "rich webhooks"
         //  - changes the webhook avatar to whatever they configure
         //  - changes the name to whatever they configure
 
@@ -39,7 +38,7 @@ class Mizuki : JavaPlugin() {
 
     override fun onDisable() {
         if(!Discord.isConnected) return
-        Discord.api!!.disconnect().join()
+        Discord.api.disconnect().join()
     }
 
     companion object {

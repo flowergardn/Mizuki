@@ -12,7 +12,7 @@ import java.awt.Color
 
 class ChatListener {
     init {
-        Discord.api!!.addMessageCreateListener { event -> onChat(event) }
+        Discord.api.addMessageCreateListener { event -> onChat(event) }
     }
 
     private fun onChat(event: MessageCreateEvent) {
